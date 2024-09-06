@@ -19,6 +19,4 @@ def init(spec, batchSize):
         nn.Dropout(),
         nn.Linear(... ,...)
     )
-    return 0
-
-def 
+    return None

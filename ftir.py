@@ -15,7 +15,7 @@ def readOld():
     spec = pd.read_csv("C:/Users/guilh/OneDrive/Documents/Pesquisa/ML MIT/FTIR NN/polyethylene_ref.csv",
                    sep = ";" 
                    )
-    spec = spec[['Wavenumbers [1/cm]', 'Absorbance']]
+    spec = spec[['Wavenumbers [1/cm]', 'Absorbance']];
 
     # Cleansing
     spec['Wavenumbers [1/cm]'] = [float(x.replace(',','.')) for x in spec['Wavenumbers [1/cm]']]
@@ -26,10 +26,8 @@ def readOld():
     spec = spec.iloc[rang[0]:rang[1], :]
     return spec
 
-def readNicolet(filepath: str, res: int, rang = (450, 4400): typing.Tuple(int, int)) -> pd.DataFrame:
-    spec = pd.read_csv(filepath,
-                   sep = ";" 
-                   )
+def readNicolet(filepath: str, res: int, rang = (450, 4400)):
+    spec = pd.read_csv(filepath, sep = ";")
     spec = spec[['Wavenumbers [1/cm]', 'Absorbance']]
     spec['Wavenumbers [1/cm]'] = [float(x.replace(',','.')) for x in spec['Wavenumbers [1/cm]']]
     spec['Absorbance'] = [float(x.replace(',','.')) for x in spec['Absorbance']] 
